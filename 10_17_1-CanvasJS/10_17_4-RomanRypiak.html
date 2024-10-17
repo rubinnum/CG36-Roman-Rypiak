@@ -12,10 +12,14 @@
         Your browser does not support the canvas element.
     </canvas>
 
-    <script>
+    <p>
+        L<sub>(iv)</sub>(V<sub>1</sub>; {3, 5}) = {3V<sub>1</sub>, 5V<sub>1</sub>}
+    </p>
 
+    <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
+
 
         ctx.strokeStyle = "black";
 
@@ -29,6 +33,7 @@
 
         ctx.stroke();
 
+
         // Vector V1 
         ctx.beginPath();
         ctx.strokeStyle = "red";
@@ -37,6 +42,29 @@
 
         ctx.stroke();
 
+        // Arrow at the end for V1
+        ctx.beginPath();
+        ctx.moveTo(115, 45);
+        ctx.lineTo(110, 42);
+        ctx.moveTo(115, 45);
+        ctx.lineTo(113, 50);
+        
+        ctx.stroke();
+
+
+        // Vector 3V1
+        ctx.beginPath();
+        ctx.strokeStyle = "green";
+        ctx.arc(145, 35, 4, 0, 2 * Math.PI);
+        ctx.stroke();
+        
+        // Vector 5V1
+        ctx.beginPath();
+        ctx.strokeStyle = "blue";
+        ctx.arc(175, 25, 4, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // Labels
         ctx.font = "12px serif";
         ctx.fillText("X", 190, 45);
         ctx.fillText("20", 187, 63);
@@ -49,6 +77,12 @@
 
         ctx.fillStyle = "red";
         ctx.fillText("V1", 108, 42);
+
+        ctx.fillStyle = "green";
+        ctx.fillText("3V1", 128, 29);
+
+        ctx.fillStyle = "blue";
+        ctx.fillText("5V1", 158, 19)
 
     </script>
 
